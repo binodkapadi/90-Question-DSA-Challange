@@ -1,0 +1,12 @@
+CODE ==>
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int n = nums.size(), mis = n;
+        for(int i = 0; i < n;i++){
+            mis ^= i ^ nums[i];
+        } 
+        return mis;       
+    }
+};

@@ -1,0 +1,13 @@
+CODE ==>
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int n = nums.size(), i;
+        int result = 0;
+        for(i=0;i<n;i++){
+           result = result ^ nums[i];
+        }
+       return result; 
+    }
+};

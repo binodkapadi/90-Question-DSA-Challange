@@ -1,0 +1,48 @@
+sOLUTION ==>
+
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+        vector<int> pos, neg;
+        int n = nums.size();
+        for(int i = 0; i < n; i++){
+            if(nums[i]>0){
+                pos.push_back(nums[i]);
+            }
+            else{
+                neg.push_back(nums[i]);
+            }
+        }
+        vector<int> result;
+        for(int i = 0; i < n/2; i++){
+            result.push_back(pos[i]);
+            result.push_back(neg[i]);
+        }
+    return result;   
+    }
+};
+
+
+
+OTHER WAY TO REPRESENT 1D ARRAY =>
+
+ vector<int> pos, neg;
+    for (int x : nums) {
+        if (x > 0) pos.push_back(x);
+        else neg.push_back(x);
+    }
+    
+    vector<int> result;
+    for (int i = 0; i < pos.size(); i++) {
+        result.push_back(pos[i]);
+        result.push_back(neg[i]);
+    }
+    return result;
+
+
+GENERAL RULE =>
+
+1D: for (int x : vec)
+2D: for (auto& row : vec2D) for (int x : row)
+3D: for (auto& mat : vec3D) for (auto& row : mat) for (int x : row)
+

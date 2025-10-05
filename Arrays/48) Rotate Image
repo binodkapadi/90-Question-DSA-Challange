@@ -1,0 +1,32 @@
+SOLUTION ==>
+
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+        int n = matrix[0].size();
+
+        for(int i = 0; i < n; i++){
+            for(int j = i + 1; j < n; j++){
+                swap(matrix[i][j], matrix[j][i]);
+            }
+        }
+
+        for(int i = 0; i < n; i++){
+            reverse(matrix[i].begin(), matrix[i].end());
+        }    
+    }
+};
+
+
+-----------------To rotate a matrix 90° clockwise in-place, you can do it in two steps-------------------------
+
+1) Transpose the matrix → swap elements across the main diagonal.
+(i.e., matrix[i][j] ↔ matrix[j][i])
+
+2) Reverse each row → reverse the order of elements in every row.
+
+-------------------For counter-clockwise rotation--------------------------------------
+
+To rotate a matrix 90 degrees counter-clockwise, you can simply reverse the order of operations: 
+1) Reverse each row.
+2) Transpose the matrix. 

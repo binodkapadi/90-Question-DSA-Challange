@@ -18,7 +18,7 @@ public:
 };
 
 
------------------To rotate a matrix 90° clockwise in-place, you can do it in two steps-------------------------
+-----------------To rotate a matrix 90° clockwise in-place, you can do it in two steps-----------------------------
 
 1) Transpose the matrix → swap elements across the main diagonal.
 (i.e., matrix[i][j] ↔ matrix[j][i])

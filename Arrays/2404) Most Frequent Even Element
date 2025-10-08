@@ -1,0 +1,30 @@
+SOLUTION ==>
+
+class Solution {
+public:
+    int mostFrequentEven(vector<int>& nums) {
+    unordered_map<int, int> freq;    // store frequency of even numbers
+
+// Count frequencies of even numbers
+    for(int i : nums){
+        if(i % 2 == 0){
+            freq[i]++;
+        }
+    }  
+
+//If no even number, return -1
+    if(freq.empty()) return -1;
+
+//Find the most frequent even number
+    int ans = -1;
+    int maxFreq = 0; 
+
+    for (auto& [i, count] : freq) {
+        if (count > maxFreq || (count == maxFreq && i < ans)) {
+            maxFreq = count;
+            ans = i;
+        }
+    }
+    return ans;
+    }
+};

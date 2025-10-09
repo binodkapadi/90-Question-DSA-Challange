@@ -1,7 +1,7 @@
 
 SOLUTION OF THE ABOVE PROBLEM (CODE) :(MOST FREQUENTLY ASKED QUESTION)
 
-APPROACH 1 ==>>
+APPROACH 1 ==>> [brute-force approach]
 
 class Solution {
 public:
@@ -20,7 +20,31 @@ public:
 };
 
 
-APPROACH 2 ==>>
+APPROACH 2 ==>> [Two-Pointer Approach]
+We use two pointers because the array is sorted:
+The two-pointer approach only works when the array is sorted.
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        int left = 0, right = numbers.size() - 1;
+
+        while (left < right) {
+            int sum = numbers[left] + numbers[right];
+
+            if (sum == target)
+                return {left + 1, right + 1}; // 1-based index
+            else if (sum < target)
+                left++;
+            else
+                right--;
+        }
+        return {}; // no solution (should not happen if guaranteed)
+    }
+};
+
+
+APPROACH 3 ==>> [Hash Map Approach]
 
 class Solution {
 public:

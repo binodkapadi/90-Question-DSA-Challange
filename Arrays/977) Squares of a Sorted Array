@@ -11,7 +11,7 @@ public:
 
         for(int i = 0; i < n; i++){
             nums[i] *= nums[i];
-            result.push_back(nums[i]);
+            result.push_back(nums[i]); 
         }
         sort(result.begin(), result.end());
 
